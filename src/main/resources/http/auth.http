@@ -1,0 +1,10 @@
+### Login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@mail.ru",
+  "password": "12345"
+}
+
+<> 2024-01-23T212632.200.json

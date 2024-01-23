@@ -1,0 +1,4 @@
+### Init Admin
+GET http://localhost:8080/init/admin
+
+<> 2024-01-23T180004.200.txt
