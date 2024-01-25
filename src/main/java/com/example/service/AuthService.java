@@ -5,6 +5,7 @@ import com.example.dto.ProfileDTO;
 import com.example.entity.ProfileEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.ProfileRepository;
+import com.example.utils.JWTUtil;
 import com.example.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,22 +19,23 @@ public class AuthService {
 
     public ProfileDTO auth(AuthDTO profile) {  // login
 
-            Optional<ProfileEntity> optional = profileRepository.findByEmailAndPassword(profile.getEmail(),
-                    MD5Util.encode(profile.getPassword()));
+        Optional<ProfileEntity> optional = profileRepository.findByEmailAndPassword(profile.getEmail(),
+                MD5Util.encode(profile.getPassword()));
 
-            if (optional.isEmpty()) {
-                throw new AppBadException("Email or Password is wrong");
-            }
-
-            ProfileEntity entity = optional.get();
-
-            ProfileDTO dto = new ProfileDTO();
-            dto.setName(entity.getName());
-            dto.setSurname(entity.getSurname());
-            dto.setRole(entity.getRole());
-
-            return dto;
+        if (optional.isEmpty()) {
+            throw new AppBadException("Email or Password is wrong");
         }
+
+        ProfileEntity entity = optional.get();
+
+        ProfileDTO dto = new ProfileDTO();
+        dto.setName(entity.getName());
+        dto.setSurname(entity.getSurname());
+        dto.setRole(entity.getRole());
+        dto.setJwt(JWTUtil.encode(entity.getId(), entity.getRole()));
+
+        return dto;
+    }
 
 
 }

@@ -10,15 +10,14 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProfileDTO {
-    protected Integer id;
+public class ProfileDTO extends BaseDTO {
     private String name;
     private String surname;
     private String email;
     private String password;
     private ProfileStatus status;
     private ProfileRole role;
-    protected LocalDateTime createdDate;
     protected LocalDateTime updatedDate;
     private Boolean visible;
+    private String jwt;
 }

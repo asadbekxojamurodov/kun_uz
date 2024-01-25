@@ -31,4 +31,5 @@ public class InitService {
         admin.setPassword(MD5Util.encode("12345"));
         profileRepository.save(admin);
     }
+
 }

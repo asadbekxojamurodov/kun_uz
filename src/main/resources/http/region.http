@@ -1,0 +1,66 @@
+### create REGION
+POST http://localhost:8080/region
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+{
+  "order_number": 2,
+  "name_uz": "Toshkent",
+  "name_en": "Tashkent",
+  "name_ru": "Ташкент"
+}
+
+<> 2024-01-24T130613.200.json
+<> 2024-01-24T125434.200.json
+<> 2024-01-24T125406.200.json
+<> 2024-01-24T125320.200.json
+<> 2024-01-24T125135.200.json
+<> 2024-01-24T124851.200.json
+<> 2024-01-24T124755.200.json
+<> 2024-01-24T124750.200.json
+
+
+### update REGION
+PUT http://localhost:8080/region/6
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+{
+  "order_number": 4,
+  "name_uz": "Toshkent 2",
+  "name_en": "Tashkent 2",
+  "name_ru": "Ташкент 2"
+}
+
+<> 2024-01-24T131730.200.json
+<> 2024-01-24T131222.200.json
+<> 2024-01-24T130956.200.json
+<> 2024-01-24T130736.200.json
+
+### delete REGION
+DELETE http://localhost:8080/region/6
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+<> 2024-01-24T131744.200.json
+<> 2024-01-24T130712.200.json
+
+
+### Get all region
+GET http://localhost:8080/region/all
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+<> 2024-01-25T205312.200.json
+<> 2024-01-25T205309.200.json
+
+
+### get by lang
+GET http://localhost:8080/region/byLang?lang=RU
+
+<> 2024-01-25T213853.200.json
+<> 2024-01-25T213832.200.json
+<> 2024-01-25T213659.200.json
+<> 2024-01-25T213641.200.json
+<> 2024-01-25T213632.500.txt
