@@ -1,0 +1,59 @@
+### create category
+POST http://localhost:8080/category
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+{
+  "name_uz": "IQTISODIYOT",
+  "name_ru": "ИҚТИСОДИЁТ",
+  "name_en": "ECONOMY",
+  "order_number": 1
+}
+
+<> 2024-01-26T143656.200.json
+<> 2024-01-26T143001.200.json
+<> 2024-01-26T142958.200.json
+
+
+### update category
+PUT http://localhost:8080/category/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+{
+  "name_uz": "JAHON",
+  "name_ru": "ЖАҲОН",
+  "name_en": "WORLD",
+  "order_number": 2
+}
+
+<> 2024-01-26T143223.200.json
+<> 2024-01-26T143213.400.json
+
+### delete by id
+DELETE http://localhost:8080/category/4
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+<> 2024-01-26T143707.200.json
+
+
+### get all category
+GET http://localhost:8080/category
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+<> 2024-01-26T143818.200.json
+<> 2024-01-26T143803.200.json
+<> 2024-01-26T143711.200.json
+<> 2024-01-26T143621.200.json
+<> 2024-01-26T143410.500.txt
+<> 2024-01-26T143323.500.txt
+<> 2024-01-26T143311.400.json
+
+### get by lang
+GET http://localhost:8080/category/byLang?lang=RU
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+<> 2024-01-26T143350.200.json
