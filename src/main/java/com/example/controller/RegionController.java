@@ -6,6 +6,7 @@ import com.example.enums.AppLanguage;
 import com.example.enums.ProfileRole;
 import com.example.service.RegionService;
 import com.example.utils.JWTUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpStatus;
@@ -21,27 +22,30 @@ public class RegionController {
     @Autowired
     private RegionService regionService;
 
-    @PostMapping("")
+    @PostMapping("/adm")
     public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO dto,
-                                            @RequestHeader(value = "Authorization") String jwt) {
-        JwtDTO jwtDTO = JWTUtil.decode(jwt);
-        if (!jwtDTO.getRole().equals(ProfileRole.ADMIN)) {
+                                            HttpServletRequest request) {
+        Integer id = (Integer) request.getAttribute("id");
+        ProfileRole role = (ProfileRole) request.getAttribute("role");
+
+        if (!role.equals(ProfileRole.ADMIN)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
         return ResponseEntity.ok(regionService.create(dto));
     }
 
 
-    @GetMapping("")
-    public ResponseEntity<List<RegionDTO>> allVisible(@RequestHeader(value = "Authorization") String jwt) {
-        JwtDTO jwtDTO = JWTUtil.decode(jwt);
-        if (!jwtDTO.getRole().equals(ProfileRole.ADMIN)) {
+    @GetMapping("/adm")
+    public ResponseEntity<List<RegionDTO>> allVisible(HttpServletRequest request) {
+
+        ProfileRole role = (ProfileRole) request.getAttribute("role");
+        if (!role.equals(ProfileRole.ADMIN)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
         return ResponseEntity.ok(regionService.getVisible());
     }
 
-    @GetMapping("/all")
+    @GetMapping("/adm/all")
     public ResponseEntity<List<RegionDTO>> getAll(@RequestHeader(value = "Authorization") String jwt) {
         JwtDTO jwtDTO = JWTUtil.decode(jwt);
         if (!jwtDTO.getRole().equals(ProfileRole.ADMIN)) {
@@ -50,7 +54,7 @@ public class RegionController {
         return ResponseEntity.ok(regionService.getAll());
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/adm/{id}")
     public ResponseEntity<Boolean> update(@PathVariable("id") Integer id, @RequestBody RegionDTO dto,
                                           @RequestHeader(value = "Authorization") String jwt) {
         JwtDTO jwtDTO = JWTUtil.decode(jwt);
@@ -60,7 +64,7 @@ public class RegionController {
         return ResponseEntity.ok(regionService.update(id, dto));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/adm/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer id,
                                           @RequestHeader(value = "Authorization") String jwt) {
         JwtDTO jwtDTO = JWTUtil.decode(jwt);

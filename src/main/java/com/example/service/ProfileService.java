@@ -4,7 +4,6 @@ import com.example.dto.PaginationResultDTO;
 import com.example.dto.ProfileDTO;
 import com.example.dto.ProfileFilterDTO;
 import com.example.entity.ProfileEntity;
-import com.example.enums.ProfileRole;
 import com.example.enums.ProfileStatus;
 import com.example.exp.AppBadException;
 import com.example.repository.ProfileCustomRepository;
@@ -35,7 +34,7 @@ public class ProfileService {
         entity.setSurname(dto.getSurname());
         entity.setEmail(dto.getEmail());
         entity.setPassword(MD5Util.encode(dto.getPassword()));
-        entity.setRole(ProfileRole.USER);
+        entity.setRole(dto.getRole());
         entity.setStatus(ProfileStatus.ACTIVE);
         entity.setCreatedDate(LocalDateTime.now());
         entity.setVisible(true);
@@ -48,11 +47,26 @@ public class ProfileService {
 
     public Boolean update(Integer id, ProfileDTO dto) {
         ProfileEntity entity = get(id);
-        entity.setName(dto.getName());
-        entity.setSurname(dto.getSurname());
-        entity.setUpdatedDate(LocalDateTime.now());
-        profileRepository.save(entity);
-        return true;
+        if (dto.getName().isEmpty() && dto.getSurname().isEmpty()) {
+            throw new AppBadException("at list one detail is required");
+        } else if (!dto.getName().isEmpty() && dto.getName().length() > 2) {
+            entity.setName(dto.getName());
+            entity.setUpdatedDate(LocalDateTime.now());
+            profileRepository.save(entity);
+            return true;
+        } else if (!dto.getSurname().isEmpty() && dto.getSurname().length() > 2) {
+            entity.setSurname(dto.getSurname());
+            entity.setUpdatedDate(LocalDateTime.now());
+            profileRepository.save(entity);
+            return true;
+        } else {
+            entity.setName(dto.getName());
+            entity.setSurname(dto.getSurname());
+            entity.setUpdatedDate(LocalDateTime.now());
+            profileRepository.save(entity);
+            return true;
+        }
+
     }
 
     public PageImpl<ProfileDTO> pagination(Integer page, Integer size) {
@@ -88,12 +102,11 @@ public class ProfileService {
     }
 
 
-
     public List<ProfileDTO> getAll() {
         Iterable<ProfileEntity> entityList = profileRepository.findAll();
         List<ProfileDTO> dtoList = new LinkedList<>();
         for (ProfileEntity entity : entityList) {
-                dtoList.add(toDTO(entity));
+            dtoList.add(toDTO(entity));
         }
         return dtoList;
     }

@@ -1,3 +1,102 @@
+GET http://localhost:8080/region/adm
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY1NTY2NzcsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2NDMwNzcsImlzcyI6Ikt1blV6VGVzdCJ9.EhMv3YLEmesJdNzLzQ7S21Lz-2ZJ1rlRzRdjQ7KMTPfs9Ay_X7Ei8H6FryFuWj1UXaa8rxFOymvAZUhj8_BqDw
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-30T010433.200.json
+
+###
+
+GET http://localhost:8080/region/adm
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+POST http://localhost:8080/region/adm
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY1NTY2NzcsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2NDMwNzcsImlzcyI6Ikt1blV6VGVzdCJ9.EhMv3YLEmesJdNzLzQ7S21Lz-2ZJ1rlRzRdjQ7KMTPfs9Ay_X7Ei8H6FryFuWj1UXaa8rxFOymvAZUhj8_BqDw
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{"order_number": 1,
+  "name_uz": "Samarqand",
+  "name_en": "Samarkand",
+  "name_ru": "Самарканд"
+}
+
+<> 2024-01-30T005410.200.json
+
+###
+
+POST http://localhost:8080/region/adm
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY1NTY2NzcsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2NDMwNzcsImlzcyI6Ikt1blV6VGVzdCJ9.EhMv3YLEmesJdNzLzQ7S21Lz-2ZJ1rlRzRdjQ7KMTPfs9Ay_X7Ei8H6FryFuWj1UXaa8rxFOymvAZUhj8_BqDw
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{"order_number": 1,
+  "name_uz": "Samarqand",
+  "name_en": "Samarkand",
+  "name_ru": "Самарканд"
+}
+
+###
+
+POST http://localhost:8080/region/adm
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY1NTY2NzcsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2NDMwNzcsImlzcyI6Ikt1blV6VGVzdCJ9.EhMv3YLEmesJdNzLzQ7S21Lz-2ZJ1rlRzRdjQ7KMTPfs9Ay_X7Ei8H6FryFuWj1UXaa8rxFOymvAZUhj8_BqDw
+Content-Length: 107
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{"order_number": 1,
+  "name_uz": "Samarqand",
+  "name_en": "Samarkand",
+  "name_ru": "Самарканд"
+}
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 53
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "admin@mail.ru",
+  "password": "12345"
+}
+
+<> 2024-01-30T003117.200.json
+
+###
+
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Content-Length: 53
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "admin@mail.ru",
+  "password": "12345"
+}
+
+<> 2024-01-30T003111.200.json
+
+###
+
 GET http://localhost:8080/category
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 Connection: Keep-Alive
@@ -611,94 +710,6 @@ User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2024-01-25T235836.400.json
-
-###
-
-GET http://localhost:8080/region/byLang?lang=RU
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-01-25T235830.200.json
-
-###
-
-POST http://localhost:8080/auth/login
-Content-Type: application/json
-Content-Length: 53
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "email": "admin@mail.ru",
-  "password": "12345"
-}
-
-<> 2024-01-25T235740.200.json
-
-###
-
-POST http://localhost:8080/region
-Content-Type: application/json
-Content-Length: 104
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "order_number": 2,
-  "name_uz": "Toshkent",
-  "name_en": "Tashkent",
-  "name_ru": "Ташкент"
-}
-
-<> 2024-01-25T235513.400.json
-
-###
-
-PUT http://localhost:8080/region/6
-Content-Type: application/json
-Content-Length: 110
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "order_number": 4,
-  "name_uz": "Toshkent 2",
-  "name_en": "Tashkent 2",
-  "name_ru": "Ташкент 2"
-}
-
-<> 2024-01-25T235506.400.json
-
-###
-
-GET http://localhost:8080/region/byLang?lang=RU
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-01-25T235458.200.json
-
-###
-
-DELETE http://localhost:8080/region/6
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-01-25T235400.400.json
-
-###
-
-GET http://localhost:8080/region/byLang?lang=RU
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-01-25T235348.200.json
 
 ###
 

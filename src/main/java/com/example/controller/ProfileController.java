@@ -28,8 +28,7 @@ public class ProfileController {
         if (!jwtDTO.getRole().equals(ProfileRole.ADMIN)) {
             return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
         }
-        ProfileDTO result = profileService.create(dto);
-        return ResponseEntity.ok(result);
+        return ResponseEntity.ok(profileService.create(dto));
     }
 
     @PutMapping("/byAdmin{id}")
@@ -43,8 +42,10 @@ public class ProfileController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Boolean> update(@PathVariable("id") Integer id, @RequestBody ProfileDTO dto) {
-        return ResponseEntity.ok(profileService.update(id, dto));
+    public ResponseEntity<Boolean> update( @RequestBody ProfileDTO dto,
+                                          @RequestHeader(value = "Authorization") String jwt) {
+        JwtDTO jwtDTO = JWTUtil.decode(jwt);
+        return ResponseEntity.ok(profileService.update(jwtDTO.getId(), dto));
     }
 
     @GetMapping("")
