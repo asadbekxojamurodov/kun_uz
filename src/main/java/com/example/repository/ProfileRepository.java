@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.entity.ProfileEntity;
+import com.example.enums.ProfileStatus;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -21,5 +22,10 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer
     @Modifying
     @Query("update ProfileEntity set visible = false where id =:id")
     int deleteProfile(@Param("id") Integer id);
+
+    @Transactional
+    @Modifying
+    @Query("Update ProfileEntity  set status =?2 where id = ?1")
+    void updateStatus(Integer id, ProfileStatus active);
 
 }

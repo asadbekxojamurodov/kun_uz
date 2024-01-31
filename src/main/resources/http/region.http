@@ -39,17 +39,16 @@ Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoi
 <> 2024-01-24T130736.200.json
 
 ### delete REGION
-DELETE http://localhost:8080/region/6
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
-
+DELETE http://localhost:8080/region/adm/6
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY2MTIwMzAsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2OTg0MzAsImlzcyI6Ikt1blV6VGVzdCJ9.GYa9XpNrQqrSxPeClW2X2o_m4b7p3WhUmbwg2GHa2Z23qX1rLz1z_m8DxpNBQMvQLxdi6xLPketr17Wxlj7bFg
 
 <> 2024-01-24T131744.200.json
 <> 2024-01-24T130712.200.json
 
 
 ### Get all region
-GET http://localhost:8080/region/all
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+GET http://localhost:8080/region/adm/all
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY2MTIwMzAsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY2OTg0MzAsImlzcyI6Ikt1blV6VGVzdCJ9.GYa9XpNrQqrSxPeClW2X2o_m4b7p3WhUmbwg2GHa2Z23qX1rLz1z_m8DxpNBQMvQLxdi6xLPketr17Wxlj7bFg
 
 
 <> 2024-01-25T205312.200.json

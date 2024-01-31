@@ -9,3 +9,14 @@ Content-Type: application/json
 
 <> 2024-01-23T212632.200.json
 
+### Registration
+POST http://localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Alish",
+  "surname": "Aliyev",
+  "email": "asadbekxojamurodov68@gmail.com",
+  "password": "12345"
+}
+

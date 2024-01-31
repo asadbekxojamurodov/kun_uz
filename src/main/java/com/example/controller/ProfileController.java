@@ -5,7 +5,9 @@ import com.example.dto.ProfileDTO;
 import com.example.dto.ProfileFilterDTO;
 import com.example.enums.ProfileRole;
 import com.example.service.ProfileService;
+import com.example.utils.HttpRequestUtil;
 import com.example.utils.JWTUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.HttpStatus;
@@ -31,7 +33,7 @@ public class ProfileController {
         return ResponseEntity.ok(profileService.create(dto));
     }
 
-    @PutMapping("/byAdmin{id}")
+    @PutMapping("/byAdmin/{id}")
     public ResponseEntity<Boolean> updateAdmin(@PathVariable("id") Integer id, @RequestBody ProfileDTO dto,
                                                @RequestHeader(value = "Authorization") String jwt) {
         JwtDTO jwtDTO = JWTUtil.decode(jwt);
@@ -41,11 +43,11 @@ public class ProfileController {
         return ResponseEntity.ok(profileService.update(id, dto));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Boolean> update( @RequestBody ProfileDTO dto,
-                                          @RequestHeader(value = "Authorization") String jwt) {
-        JwtDTO jwtDTO = JWTUtil.decode(jwt);
-        return ResponseEntity.ok(profileService.update(jwtDTO.getId(), dto));
+    @PutMapping("/updateDetail")
+    public ResponseEntity<Boolean> update(@RequestBody ProfileDTO dto,
+                                          HttpServletRequest request) {
+        Integer id = HttpRequestUtil.getProfileId(request);
+        return ResponseEntity.ok(profileService.update(id, dto));
     }
 
     @GetMapping("")
@@ -65,7 +67,6 @@ public class ProfileController {
         }
         return ResponseEntity.ok(profileService.getActive());
     }
-
 
 
     @GetMapping("/pagination")
