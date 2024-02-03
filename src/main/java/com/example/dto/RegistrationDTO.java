@@ -8,7 +8,6 @@ import lombok.Setter;
 public class RegistrationDTO {
    private String name;
    private String surname;
-   private String login;
    private String email;
    private String password;
    private String phone;

@@ -12,5 +12,4 @@ public class SmsHistoryController {
     @Autowired
     private SmsServerService smsServerService;
 
-
 }

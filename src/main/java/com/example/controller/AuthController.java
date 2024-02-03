@@ -29,4 +29,10 @@ public class AuthController {
         return ResponseEntity.ok(authService.emailVerification(jwt));
     }
 
+//    @GetMapping("/verification/sms/{jwt}")
+//    public ResponseEntity<String> smsVerification(@PathVariable("jwt") String jwt) {
+//        return ResponseEntity.ok(authService.smsVerification(jwt));
+//    }
+
+
 }

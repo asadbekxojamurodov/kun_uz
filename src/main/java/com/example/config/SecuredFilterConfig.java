@@ -20,6 +20,28 @@ public class SecuredFilterConfig {
         bean.addUrlPatterns("/region/adm");
         bean.addUrlPatterns("/region/adm/*");
         bean.addUrlPatterns("/region/adm/**");
+
+        bean.addUrlPatterns("/article/adm");
+        bean.addUrlPatterns("/article/adm/*");
+        bean.addUrlPatterns("/article/adm/**");
+
+        bean.addUrlPatterns("/articleType/adm");
+        bean.addUrlPatterns("/articleType/adm/*");
+        bean.addUrlPatterns("/articleType/adm/**");
+
+        bean.addUrlPatterns("/article/mod");
+        bean.addUrlPatterns("/article/mod/*");
+        bean.addUrlPatterns("/article/mod/**");
+
+        bean.addUrlPatterns("/category/adm");
+        bean.addUrlPatterns("/category/adm/*");
+        bean.addUrlPatterns("/category/adm/**");
+
+        bean.addUrlPatterns("/profile/adm");
+        bean.addUrlPatterns("/profile/adm/*");
+        bean.addUrlPatterns("/profile/adm/**");
+
+
         return bean;
     }
 

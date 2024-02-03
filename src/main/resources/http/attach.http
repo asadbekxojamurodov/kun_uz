@@ -1,0 +1,21 @@
+### Create
+POST http://localhost:8080/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="5312146449411096580.mp4"
+
+< D:\Downloads\38833FF26BA1D.UnigramPreview_g9c9v27vpyspw!App\5312146449411096580.mp4
+
+
+### Get
+GET http://localhost:8080/attach/open/5325649638067393891_121.jpg
+
+
+### get general
+GET http://localhost:8080/attach/open_general/5325649638067393891_121.jpg
+
+
+
+
+

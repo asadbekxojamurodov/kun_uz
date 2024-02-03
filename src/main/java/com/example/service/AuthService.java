@@ -30,6 +30,9 @@ public class AuthService {
     private SmsServerService smsServerService;
 
     @Autowired
+    private MailSenderService mailSenderService;
+
+    @Autowired
     private EmailSendHistoryRepository emailSendHistoryRepository;
 
 
@@ -59,6 +62,8 @@ public class AuthService {
 
     public Boolean registration(RegistrationDTO dto) {
         // validation
+
+
 
         // check
         Optional<ProfileEntity> optional = profileRepository.findByEmail(dto.getEmail());
@@ -90,7 +95,7 @@ public class AuthService {
         profileRepository.save(entity);
         //send verification code (email/sms)
 
-       /* String jwt = JWTUtil.encodeForEmail(entity.getId());
+        String jwt = JWTUtil.encodeForEmail(entity.getId());
 
         String text = """
                 <h1 style="text-align: center">Hello %s</h1>
@@ -105,10 +110,10 @@ public class AuthService {
                 <br>
                 """;
         text = String.format(text, entity.getName(), jwt);
-        mailSenderService.sendEmail(dto.getEmail(), "Complete registration", text);*/
+        mailSenderService.sendEmail(dto.getEmail(), "Complete registration", text);
 
-        String code = RandomUtil.getRandomSmsCode();
-        smsServerService.send(dto.getPhone(),"KunuzTest verification code: ", code);
+//        String code = RandomUtil.getRandomSmsCode();
+//        smsServerService.send(dto.getPhone(),"KunuzTest verification code: ", code,entity.getStatus());
 
         return true;
     }
@@ -131,6 +136,12 @@ public class AuthService {
         }
         return null;
     }
+
+//    public String smsVerification(String phone, String code) {
+//        //
+//        return null;
+//    }
+
 
 
 }

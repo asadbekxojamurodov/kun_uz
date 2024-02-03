@@ -42,7 +42,6 @@ public class JWTUtil {
     }
 
 
-
     public static JwtDTO decode(String token) {
         SignatureAlgorithm sa = SignatureAlgorithm.HS512;
         SecretKeySpec secretKeySpec = new SecretKeySpec(secretKey.getBytes(), sa.getJcaName());
@@ -61,7 +60,4 @@ public class JWTUtil {
         }
         return new JwtDTO(id);
     }
-
-
-
 }

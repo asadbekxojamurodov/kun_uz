@@ -1,12 +1,16 @@
 package com.example.service;
 
-import com.example.dto.SmsHistoryDTO;
+import com.example.entity.SmsHistoryEntity;
+import com.example.enums.ProfileStatus;
+import com.example.repository.SmsHistoryRepository;
 import okhttp3.*;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @Service
 public class SmsServerService {
@@ -18,9 +22,21 @@ public class SmsServerService {
     @Value("${sms.fly.uz.url}")
     private String url;
 
+    @Autowired
+    private SmsHistoryRepository smsHistoryRepository;
 
-    public void send(String phone, String text, String code) {
+
+    public void send(String phone, String text, String code, ProfileStatus status) {
         // create sms history
+
+        SmsHistoryEntity entity = new SmsHistoryEntity();
+        entity.setPhone(phone);
+        entity.setMessage(text + " " + code);
+        entity.setStatus(status);
+        entity.setCreatedDate(LocalDateTime.now());
+        entity.setUsedDate(LocalDateTime.now());
+        smsHistoryRepository.save(entity);
+
         sendSmsHTTP(phone, text + code);
     }
 
@@ -51,7 +67,7 @@ public class SmsServerService {
             throw new RuntimeException(e);
         }
 
-        /*Thread thread = new Thread(() -> {
+        Thread thread = new Thread(() -> {
             try {
                 Response response = client.newCall(request).execute();
                 if (response.isSuccessful()) {
@@ -61,7 +77,7 @@ public class SmsServerService {
                 e.printStackTrace();
             }
         });
-        thread.start();*/
+        thread.start();
     }
 
     private String getTokenWithAuthorization() {

@@ -32,5 +32,4 @@ public class HttpRequestUtil {
         }
         throw new ForbiddenException("Method not allowed");
     }
-
 }

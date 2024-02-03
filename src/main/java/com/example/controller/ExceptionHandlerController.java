@@ -13,6 +13,7 @@ public class ExceptionHandlerController {
 
     @ExceptionHandler(AppBadException.class)
     private ResponseEntity<?> handle(AppBadException e) {
+        e.printStackTrace();
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
@@ -31,5 +32,4 @@ public class ExceptionHandlerController {
          e.printStackTrace();
         return ResponseEntity.internalServerError().body(e.getMessage());
     }
-
 }

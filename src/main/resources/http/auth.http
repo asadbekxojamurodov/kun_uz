@@ -9,6 +9,17 @@ Content-Type: application/json
 
 <> 2024-01-23T212632.200.json
 
+### Login MODERATOR
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "mod@gmail.com",
+  "password": "12345"
+}
+
+
+
 ### Registration
 POST http://localhost:8080/auth/registration
 Content-Type: application/json

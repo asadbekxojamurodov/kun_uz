@@ -22,8 +22,7 @@ public class RegionController {
     @PostMapping("/adm")
     public ResponseEntity<RegionDTO> create(@RequestBody RegionDTO dto,
                                             HttpServletRequest request) {
-        Integer id = HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
-
+        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
       /*  Integer id = (Integer) request.getAttribute("id");
         ProfileRole role = (ProfileRole) request.getAttribute("role");
 
@@ -33,10 +32,9 @@ public class RegionController {
         return ResponseEntity.ok(regionService.create(dto));
     }
 
-
     @GetMapping("/adm")
     public ResponseEntity<List<RegionDTO>> allVisible(HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN, ProfileRole.MODERATOR);
+        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(regionService.getVisible());
     }
 
@@ -47,15 +45,15 @@ public class RegionController {
     }
 
     @PutMapping("/adm/{id}")
-    public ResponseEntity<Boolean> update(@PathVariable("id") Integer id,@RequestBody RegionDTO dto,
+    public ResponseEntity<Boolean> update(@PathVariable("id") Integer id, @RequestBody RegionDTO dto,
                                           HttpServletRequest request) {
-       HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
+        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(regionService.update(id, dto));
     }
 
     @DeleteMapping("/adm/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer id, HttpServletRequest request) {
-       HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN,ProfileRole.MODERATOR);
+        HttpRequestUtil.getProfileId(request, ProfileRole.ADMIN);
         return ResponseEntity.ok(regionService.delete(id));
     }
 

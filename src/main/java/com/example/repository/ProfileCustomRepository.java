@@ -83,6 +83,5 @@ public class ProfileCustomRepository {
 
         return new PaginationResultDTO<ProfileEntity>(totalElements, entityList);
 
-
     }
 }

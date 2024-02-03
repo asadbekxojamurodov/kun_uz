@@ -1,0 +1,69 @@
+### create ARTICLE TYPE
+POST http://localhost:8080/articleType/adm
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+{
+  "name_uz": "eww",
+  "name_en": "socwcciety",
+  "name_ru": "обwcwество",
+  "order_number": 3
+}
+
+<> 2024-01-24T131454.200.json
+
+
+### get all
+GET http://localhost:8080/articleType/adm/all
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY5NjI1NTMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDcwNDg5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.luenNSag_GaLP7awYfNnITuO_YxeQuevHLPzOcdtABKn0UkYZTT_A5GFtO-yXh02q00WpVS_3LjrCIb_4EP-Dg
+
+
+
+### get all visible
+GET http://localhost:8080/articleType/adm
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY5NjI1NTMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDcwNDg5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.luenNSag_GaLP7awYfNnITuO_YxeQuevHLPzOcdtABKn0UkYZTT_A5GFtO-yXh02q00WpVS_3LjrCIb_4EP-Dg
+
+
+
+### Update  ARTICLE TYPE
+PUT http://localhost:8080/articleType/adm/5
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+{
+  "name_uz": "Jahon",
+  "name_en": "World",
+  "name_ru": "мир",
+  "order_number": 3
+}
+
+<> 2024-01-24T131600.200.json
+<> 2024-01-24T000637.200.json
+
+
+### delete by id ARTICLE TYPE
+DELETE http://localhost:8080/articleType/adm/3
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+
+
+<> 2024-01-24T001103.200.json
+<> 2024-01-24T001047.200.json
+
+### Pagination ARTICLE TYPE
+GET http://localhost:8080/articleType/adm/pagination
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY5NjI1NTMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDcwNDg5NTMsImlzcyI6Ikt1blV6VGVzdCJ9.luenNSag_GaLP7awYfNnITuO_YxeQuevHLPzOcdtABKn0UkYZTT_A5GFtO-yXh02q00WpVS_3LjrCIb_4EP-Dg
+
+
+<> 2024-01-24T132059.200.json
+<> 2024-01-24T132052.200.json
+<> 2024-01-24T131604.200.json
+<> 2024-01-24T131427.200.json
+<> 2024-01-24T002037.200.json
+<> 2024-01-24T002030.200.json
+<> 2024-01-24T002024.200.json
+<> 2024-01-24T001956.200.json
+<> 2024-01-24T001859.200.json
+
+### get by lang
+GET http://localhost:8080/articleType/byLang?lang=RU

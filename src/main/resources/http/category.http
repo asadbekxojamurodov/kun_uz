@@ -1,5 +1,5 @@
 ### create category
-POST http://localhost:8080/category
+POST http://localhost:8080/category/adm
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
@@ -17,7 +17,7 @@ Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoi
 
 
 ### update category
-PUT http://localhost:8080/category/2
+PUT http://localhost:8080/category/adm/2
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
@@ -33,15 +33,15 @@ Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoi
 <> 2024-01-26T143213.400.json
 
 ### delete by id
-DELETE http://localhost:8080/category/4
+DELETE http://localhost:8080/category/adm/4
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
 <> 2024-01-26T143707.200.json
 
 
 ### get all category
-GET http://localhost:8080/category
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+GET http://localhost:8080/category/adm
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY4ODAxODYsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY5NjY1ODYsImlzcyI6Ikt1blV6VGVzdCJ9.3_OGNRndZZdAD3cBIG-uKZqLGqxAMwvTgKtxf6JWJ54XU4z8oElKd-2SwM1YilcHZZmWgVJoH4Z3OXHI3-obRQ
 
 
 <> 2024-01-26T143818.200.json

@@ -1,21 +1,22 @@
 ### create Profile
-POST http://localhost:8080/profile
+POST http://localhost:8080/profile/adm
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY5NjM4NTYsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDcwNTAyNTYsImlzcyI6Ikt1blV6VGVzdCJ9.HeZ94d4bNWe9hdVQo1sZnGiZHYW3KW9VnR_4EvCki-hyVRa6Q90RYCzRJbnOlOomSwlJ2uRSsG16Sm4QMR2JsA
 
 
 {
-"name": "Soli",
-"surname": "Soliyev",
-"email": "soli@gmail.com",
-"password": "12345"
+"name": "Moderatorjon",
+"surname": "Moderatorov",
+"email": "mod@gmail.com",
+"password": "12345",
+"role": "MODERATOR"
 }
 
 <> 2024-01-23T220430.200.json
 
 
 ### update profile
-PUT http://localhost:8080/profile/id
+PUT http://localhost:8080/profile/adm/id
 Content-Type: application/json
 
 
@@ -32,11 +33,11 @@ Content-Type: application/json
 
 
 ### get all
-GET http://localhost:8080/profile
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+GET http://localhost:8080/profile/adm
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY4ODAxODYsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDY5NjY1ODYsImlzcyI6Ikt1blV6VGVzdCJ9.3_OGNRndZZdAD3cBIG-uKZqLGqxAMwvTgKtxf6JWJ54XU4z8oElKd-2SwM1YilcHZZmWgVJoH4Z3OXHI3-obRQ
 
 ### get all active
-GET http://localhost:8080/profile/allActive
+GET http://localhost:8080/profile/adm/allActive
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
 
@@ -59,15 +60,15 @@ Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoi
 <> 2024-01-25T230718.200.json
 
 ### delete profile
-DELETE http://localhost:8080/profile/id
+DELETE http://localhost:8080/profile/adm/id
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
 ### pagination
-GET http://localhost:8080/profile/pagination
+GET http://localhost:8080/profile/adm/pagination
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
 ### update by admin
-PUT http://localhost:8080/profile/byAdmin/id
+PUT http://localhost:8080/profile/adm/id
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
 
