@@ -1,0 +1,17 @@
+### create saved article
+POST http://localhost:8080/savedArticle/create
+Content-Type: application/json
+
+{
+  "profileId": 1,
+  "articleId": "83cd5a5a-6553-405b-b648-77f099de4ea6"
+}
+
+
+### Delete
+DELETE http://localhost:8080/savedArticle/delete/83cd5a5a-6553-405b-b648-77f099de4ea6/1
+
+
+### Get list
+GET http://localhost:8080/savedArticle/get/2
+

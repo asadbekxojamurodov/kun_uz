@@ -1,0 +1,45 @@
+### create comment
+POST http://localhost:8080/comment/create
+Content-Type: application/json
+
+{
+  "content": "Qalesan",
+  "profileId": 2,
+  "articleId": "83cd5a5a-6553-405b-b648-77f099de4ea6",
+  "replyId": 1
+}
+
+### update comment
+PUT http://localhost:8080/comment/update/2
+Content-Type: application/json
+#Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc4MzkyMzMsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3OTI1NjMzLCJpc3MiOiJLdW5VelRlc3QifQ.O5odHbp4ZqXgrS1Bjy7HY37hq-eWjZITbLQI255soYSttmMTEyAwnRkGhMCmXNk2umXG626PXg6OJ_Xo7QL1Qg
+
+{
+  "articleId": "83cd5a5a-6553-405b-b648-77f099de4ea6",
+  "content": "that's good"
+}
+
+
+### Delete
+DELETE http://localhost:8080/comment/6
+
+
+### Get list by articleId
+GET http://localhost:8080/comment/getList/83cd5a5a-6553-405b-b648-77f099de4ea6
+
+
+### Pagination
+GET http://localhost:8080/comment/adm/pagination
+
+### Filter
+POST http://localhost:8080/comment/adm/filter
+Content-Type: application/json
+
+{
+  "articleId": "83cd5a5a-6553-405b-b648-77f099de4ea6",
+  "profileId": 1
+}
+
+### Get Replied comment
+GET http://localhost:8080/comment/getRepliedComment/8
+

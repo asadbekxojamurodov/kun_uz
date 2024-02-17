@@ -1,0 +1,24 @@
+### Create like
+POST http://localhost:8080/commentLike/like
+Content-Type: application/json
+
+{
+  "profileId": 2,
+  "commentId": 1,
+  "status": "LIKE"
+
+}
+
+### Create dislike
+POST http://localhost:8080/commentLike/dislike
+Content-Type: application/json
+
+{
+  "profileId": 1,
+  "commentId": 1,
+  "status": "DISLIKE"
+}
+
+### Delete emotion
+DELETE http://localhost:8080/commentLike/remove/1/2
+

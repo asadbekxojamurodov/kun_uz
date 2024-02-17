@@ -1,8 +1,8 @@
 package com.example.service;
 
 import com.example.dto.PaginationResultDTO;
-import com.example.dto.ProfileDTO;
-import com.example.dto.ProfileFilterDTO;
+import com.example.dto.profile.ProfileDTO;
+import com.example.dto.profile.ProfileFilterDTO;
 import com.example.entity.ProfileEntity;
 import com.example.enums.ProfileStatus;
 import com.example.exp.AppBadException;
@@ -11,6 +11,7 @@ import com.example.repository.ProfileRepository;
 import com.example.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -66,7 +67,6 @@ public class ProfileService {
             profileRepository.save(entity);
             return true;
         }
-
     }
 
     public PageImpl<ProfileDTO> pagination(Integer page, Integer size) {
@@ -140,5 +140,17 @@ public class ProfileService {
     public ProfileEntity get(Integer id) {
         return profileRepository.findById(id).orElseThrow(() -> new AppBadException("Profile not found"));
     }
+
+    public ProfileEntity getProfileIdNameSurname(Integer id) {
+
+        ProfileEntity profileEntity = get(id);
+        ProfileEntity profile = new ProfileEntity();
+
+        profile.setId(profileEntity.getId());
+        profile.setName(profileEntity.getName());
+        profile.setSurname(profileEntity.getSurname());
+        return profile;
+    }
+
 
 }

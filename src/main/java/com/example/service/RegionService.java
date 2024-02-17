@@ -20,13 +20,14 @@ public class RegionService {
 
     public RegionDTO create(RegionDTO dto) {
         RegionEntity entity = new RegionEntity();
-        entity.setNameUz(dto.getName_uz());
-        entity.setNameEn(dto.getName_en());
-        entity.setNameRu(dto.getName_ru());
-        entity.setOrderNumber(dto.getOrder_number());
+        entity.setNameUz(dto.getNameUz());
+        entity.setNameEn(dto.getNameEn());
+        entity.setNameRu(dto.getNameRu());
+        entity.setOrderNumber(dto.getOrderNumber());
         regionRepository.save(entity);
 
         dto.setId(entity.getId());
+        dto.setVisible(entity.isVisible());
         dto.setCreatedDate(entity.getCreatedDate());
         return dto;
     }
@@ -34,10 +35,10 @@ public class RegionService {
     public Boolean update(Integer id, RegionDTO dto) {
         RegionEntity entity = get(id);
 
-        entity.setNameUz(dto.getName_uz());
-        entity.setNameEn(dto.getName_en());
-        entity.setNameRu(dto.getName_ru());
-        entity.setOrderNumber(dto.getOrder_number());
+        entity.setNameUz(dto.getNameUz());
+        entity.setNameEn(dto.getNameEn());
+        entity.setNameRu(dto.getNameRu());
+        entity.setOrderNumber(dto.getOrderNumber());
 
         regionRepository.save(entity);
         return true;
@@ -52,10 +53,10 @@ public class RegionService {
     private RegionDTO toDTO(RegionEntity entity) {
         RegionDTO dto = new RegionDTO();
         dto.setId(entity.getId());
-        dto.setName_uz(entity.getNameUz());
-        dto.setName_ru(entity.getNameRu());
-        dto.setName_en(entity.getNameEn());
-        dto.setOrder_number(entity.getOrderNumber());
+        dto.setNameUz(entity.getNameUz());
+        dto.setNameRu(entity.getNameRu());
+        dto.setNameEn(entity.getNameEn());
+        dto.setOrderNumber(entity.getOrderNumber());
         dto.setCreatedDate(entity.getCreatedDate());
         dto.setVisible(entity.isVisible());
         return dto;

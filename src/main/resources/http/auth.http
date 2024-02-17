@@ -1,11 +1,23 @@
 ### Login
 POST http://localhost:8080/auth/login
 Content-Type: application/json
+Accept-Language: RU
 
 {
-  "email": "admin@mail.ru",
+  "email": "admin@mail.ru1",
   "password": "12345"
 }
+
+### Login
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+Accept-Language: EN
+
+{
+  "email": "soli@gmail.com",
+  "password": "12345"
+}
+
 
 <> 2024-01-23T212632.200.json
 
@@ -18,6 +30,16 @@ Content-Type: application/json
   "password": "12345"
 }
 
+### Login PUBLISHER
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "asadbek.khujamurodov@mail.ru",
+  "password": "12345"
+}
+
+
 
 
 ### Registration
@@ -25,9 +47,25 @@ POST http://localhost:8080/auth/registration
 Content-Type: application/json
 
 {
-  "name": "Alish",
-  "surname": "Aliyev",
-  "email": "asadbekxojamurodov68@gmail.com",
-  "password": "12345"
+  "name": "Soli",
+  "surname": "Soliyev",
+  "email": "zzzzcorporation@gmail.com",
+  "password": "12345",
+  "phone": "+998905382146"
 }
+
+### Registration by sms
+POST http://localhost:8080/auth/registrationByPhoneNumber
+Content-Type: application/json
+
+{
+  "name": "Joli",
+  "surname": "Doliyev",
+  "email": "zzcorporation@gmail.com",
+  "password": "12345",
+  "phone": "+998905382146"
+}
+
+
+
 

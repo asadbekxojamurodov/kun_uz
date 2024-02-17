@@ -19,20 +19,20 @@ public class CategoryService {
     private CategoryRepository categoryRepository;
 
     public CategoryDTO create(CategoryDTO dto) {
-        if (dto.getName_uz().isEmpty() || dto.getName_en().isEmpty() ||
-                dto.getName_ru().isEmpty() || dto.getOrder_number() == null) {
+        if (dto.getNameUz().isEmpty() || dto.getNameEn().isEmpty() ||
+                dto.getNameRu().isEmpty() || dto.getOrderNumber() == null) {
             throw new AppBadException("the entire field of the category is required");
         }
-        if (dto.getName_uz().length() < 2 || dto.getName_en().length() < 2 ||
-            dto.getName_ru().length() < 2) {
+        if (dto.getNameUz().length() < 2 || dto.getNameEn().length() < 2 ||
+            dto.getNameRu().length() < 2) {
             throw new AppBadException("Category is very short");
         }
 
         CategoryEntity entity = new CategoryEntity();
-        entity.setNameUz(dto.getName_uz());
-        entity.setNameEn(dto.getName_en());
-        entity.setNameRu(dto.getName_ru());
-        entity.setOrderNumber(dto.getOrder_number());
+        entity.setNameUz(dto.getNameUz());
+        entity.setNameEn(dto.getNameEn());
+        entity.setNameRu(dto.getNameRu());
+        entity.setOrderNumber(dto.getOrderNumber());
         entity.setCreatedDate(LocalDateTime.now());
         entity.setVisible(true);
         categoryRepository.save(entity);
@@ -44,15 +44,15 @@ public class CategoryService {
 
 
     public Boolean update(Integer id, CategoryDTO dto) {
-        if (dto.getName_uz().isEmpty() && dto.getName_en().isEmpty() &&
-                dto.getName_ru().isEmpty() && dto.getOrder_number() == null) {
+        if (dto.getNameUz().isEmpty() && dto.getNameEn().isEmpty() &&
+                dto.getNameRu().isEmpty() && dto.getOrderNumber() == null) {
             throw new AppBadException("Category is required");
         }
         CategoryEntity entity = get(id);
-        entity.setNameUz(dto.getName_uz());
-        entity.setNameEn(dto.getName_en());
-        entity.setNameRu(dto.getName_ru());
-        entity.setOrderNumber(dto.getOrder_number());
+        entity.setNameUz(dto.getNameUz());
+        entity.setNameEn(dto.getNameEn());
+        entity.setNameRu(dto.getNameRu());
+        entity.setOrderNumber(dto.getOrderNumber());
         categoryRepository.save(entity);
         return true;
     }
@@ -74,10 +74,10 @@ public class CategoryService {
         for (CategoryEntity entity : all) {
             CategoryDTO dto = new CategoryDTO();
             dto.setId(entity.getId());
-            dto.setOrder_number(entity.getOrderNumber());
-            dto.setName_uz(entity.getNameUz());
-            dto.setName_en(entity.getNameEn());
-            dto.setName_ru(entity.getNameRu());
+            dto.setOrderNumber(entity.getOrderNumber());
+            dto.setNameUz(entity.getNameUz());
+            dto.setNameEn(entity.getNameEn());
+            dto.setNameRu(entity.getNameRu());
             dto.setCreatedDate(entity.getCreatedDate());
             dto.setVisible(entity.isVisible());
             dtoList.add(dto);

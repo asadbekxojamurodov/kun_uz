@@ -1,7 +1,6 @@
 package com.example.service;
 
-import com.example.entity.SmsHistoryEntity;
-import com.example.enums.ProfileStatus;
+import com.example.entity.message.SmsHistoryEntity;
 import com.example.repository.SmsHistoryRepository;
 import okhttp3.*;
 import org.json.JSONObject;
@@ -26,13 +25,11 @@ public class SmsServerService {
     private SmsHistoryRepository smsHistoryRepository;
 
 
-    public void send(String phone, String text, String code, ProfileStatus status) {
-        // create sms history
+    public void send(String phone, String text, String code) {
 
         SmsHistoryEntity entity = new SmsHistoryEntity();
         entity.setPhone(phone);
         entity.setMessage(text + " " + code);
-        entity.setStatus(status);
         entity.setCreatedDate(LocalDateTime.now());
         entity.setUsedDate(LocalDateTime.now());
         smsHistoryRepository.save(entity);

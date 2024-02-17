@@ -1,0 +1,24 @@
+### Create like
+POST http://localhost:8080/articleLike/like
+Content-Type: application/json
+
+{
+  "profileId": 1,
+  "articleId": "83cd5a5a-6553-405b-b648-77f099de4ea6",
+  "status": "LIKE"
+}
+
+### Create dislike
+POST http://localhost:8080/articleLike/dislike
+Content-Type: application/json
+
+{
+  "profileId": 2,
+  "articleId": "83cd5a5a-6553-405b-b648-77f099de4ea6",
+  "status": "DISLIKE"
+}
+
+
+### Delete emotion
+DELETE http://localhost:8080/articleLike/remove/2/83cd5a5a-6553-405b-b648-77f099de4ea6
+

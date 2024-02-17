@@ -1,0 +1,15 @@
+insert into region (name_uz, name_ru, name_en, order_number, visible, created_date)
+ values ('Toshkent sh','Тошкент ш','Tashkent city','1', true, current_timestamp),
+('Qoraqalpog‘iston','Қорақалпоғистон','Karakalpakstan','2', true, current_timestamp),
+('Andijon','Андижон','Andijan','3', true, current_timestamp),
+('Farg‘ona','Фарғона','Ferghana','4', true, current_timestamp),
+('Namangan','Наманган','Namangan','5', true, current_timestamp),
+('Samarqand','Самарқанд','Samarkand','6', true, current_timestamp),
+('Buxoro','Бухоро','Bukhara','7', true, current_timestamp),
+('Xorazm','Хорезм','Khorezm','8', true, current_timestamp),
+('Surxondaryo','Сурхондарё','Surkhandarya','9', true, current_timestamp),
+('Qashqadaryo','Қашқадарё','Kashkadarya','10', true, current_timestamp),
+('Jizzax','Жиззах','Jizzakh','11', true, current_timestamp),
+('Sirdaryo','Сирдарё','SyrDarya','12', true, current_timestamp),
+('Toshkent vil','Тошкент вил','Tashkent region','13', true, current_timestamp),
+('Navoiy','Навоий','Navoi','14', true, current_timestamp);

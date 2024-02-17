@@ -4,13 +4,19 @@ import com.example.dto.AttachDTO;
 import com.example.entity.AttachEntity;
 import com.example.exp.AppBadException;
 import com.example.repository.AttachRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -145,5 +151,41 @@ public class AttachService {
         dto.setUrl(serverUrl + "/attach/open_general/" + entity.getId() + "." + entity.getExtension());
         return dto;
     }
+
+//    public Resource download(String fileName) {
+//        try {
+//            Path file = Paths.get("attaches/" + fileName);
+//            Resource resource = new UrlResource(file.toUri());
+//            if (resource.exists() || resource.isReadable()) {
+//                return resource;
+//            } else {
+//                throw new RuntimeException("Could not read the file!");
+//            }
+//        } catch (MalformedURLException e) {
+//            throw new RuntimeException("Error: " + e.getMessage());
+//        }
+//    }
+
+    public ResponseEntity download(String attachId) {
+        try {
+            String id = attachId.substring(0, attachId.lastIndexOf("."));
+
+            AttachEntity entity = get(id);
+
+            Path file = Paths.get("uploads/" + entity.getPath() + "/" + attachId);
+
+            Resource resource = new UrlResource(file.toUri());
+
+            if (resource.exists() || resource.isReadable()) {
+                return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=\"" + entity.getOriginalName() + "\"").body(resource);
+            } else {
+                throw new RuntimeException("Could not read the file!");
+            }
+        } catch (MalformedURLException e) {
+            throw new RuntimeException("Error: " + e.getMessage());
+        }
+    }
+
 
 }

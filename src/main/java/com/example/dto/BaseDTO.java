@@ -9,4 +9,5 @@ import java.time.LocalDateTime;
 public class BaseDTO {
     private Integer id;
     private LocalDateTime createdDate;
+    private boolean visible;
 }

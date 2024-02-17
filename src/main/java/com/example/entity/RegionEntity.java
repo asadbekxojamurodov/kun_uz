@@ -11,16 +11,16 @@ import lombok.Setter;
 @Entity
 @Table(name = "region")
 public class RegionEntity extends BaseEntity {
-    @Column(name = "order_number")
+
+    @Column(name = "order_number", nullable = false)
     private Integer orderNumber;
 
-    @Column(name = "name_uz")
+    @Column(name = "name_uz", nullable = false)
     private String nameUz;
 
-    @Column(name = "name_en")
+    @Column(name = "name_en", nullable = false)
     private String nameEn;
 
-    @Column(name = "name_ru")
+    @Column(name = "name_ru", nullable = false)
     private String nameRu;
-
 }

@@ -11,7 +11,6 @@ import org.springframework.data.repository.query.Param;
 public interface RegionRepository extends CrudRepository<RegionEntity, Integer>,
         PagingAndSortingRepository<RegionEntity, Integer> {
 
-
     @Transactional
     @Modifying
     @Query("update RegionEntity set visible = false where id =:id")

@@ -28,4 +28,9 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer
     @Query("Update ProfileEntity  set status =?2 where id = ?1")
     void updateStatus(Integer id, ProfileStatus active);
 
+
+    @Query("from ProfileEntity where id = ?1 and visible = true and status = 'ACTIVE'")
+    Optional<ProfileEntity> getActiveProfile(Integer profileId);
+
+    Optional<ProfileEntity> findByPhone(String phone);
 }

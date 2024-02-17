@@ -10,6 +10,7 @@ import java.util.List;
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PaginationResultDTO<T> {
+
     private Long totalSize;
     private List<T> list;
     public PaginationResultDTO(Long totalSize, List<T> list) {

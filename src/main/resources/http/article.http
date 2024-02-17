@@ -1,17 +1,91 @@
 ### create article
 POST http://localhost:8080/article/mod
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY5NjQwODksImlkIjoyMCwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzA1MDQ4OSwiaXNzIjoiS3VuVXpUZXN0In0.ARuyrPt34wGgQeZ-4pXSpI0_UN0YwhXQYKcOp7g4Hr87eTxtHt4BRd4BY3q9thtApAzS3VBrDVWUxqp-kNkHGg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDczMDEyMjIsImlkIjoyMCwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM4NzYyMiwiaXNzIjoiS3VuVXpUZXN0In0.AZjIrGESzVC0fGht0CsPO8OVg_OFeBqk73cJ7fHeIfhnsZoT8-pEzjRF88ImV35AM9nYuzWEgdDrBtrfRw0UXw
 
 {
-  "content": "BUSINESS",
-  "description": "Eng so'ngi business yangiliklar ",
-  "title": "Mahalliy businessmanlar",
-  "categoryId": {
-    "id": 2
-  },
-  "regionId": {
-    "id": 3
-  }
+  "content": "Shahar qurilishi 3",
+  "description": "Muhim o'zgarishlar",
+  "title": "O'zbekistondagi muhim o'zgarishlar",
+  "categoryId": 2,
+  "regionId": 3,
+  "photoId": "71d39f1f-0986-4595-a2c4-dfa1bc668a77",
+  "articleType": [1,2,3]
 }
 
+
+### Update article
+PUT http://localhost:8080/article/mod/ec70c62c-3bcd-4ca7-9497-66e74e65dad8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDczMDEyMjIsImlkIjoyMCwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzM4NzYyMiwiaXNzIjoiS3VuVXpUZXN0In0.AZjIrGESzVC0fGht0CsPO8OVg_OFeBqk73cJ7fHeIfhnsZoT8-pEzjRF88ImV35AM9nYuzWEgdDrBtrfRw0UXw
+
+{
+  "content": "Yevropa",
+  "description": "Jahon o'zgarishlar",
+  "title": "Jahondagi muhim o'zgarishlar",
+  "categoryId": 2,
+  "regionId": 3,
+  "photoId": "71d39f1f-0986-4595-a2c4-dfa1bc668a77",
+  "articleType": [2,3]
+}
+
+
+### Delete (do visible false)
+DELETE http://localhost:8080/article/mod/f905f3e9-12a5-4d27-8082-92f49c1f4bfa
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDczOTg0NjIsImlkIjoyMCwicm9sZSI6Ik1PREVSQVRPUiIsImV4cCI6MTcwNzQ4NDg2MiwiaXNzIjoiS3VuVXpUZXN0In0.lmSjHn2_VdjOdWivKrBgyZggejqRMnbwusV0jmod1_EhviP-wRIQLUWpAjLSWbgZqWVBSFqZrVlz1ouJPKiEyQ
+
+
+### Published by publisher
+PUT http://localhost:8080/article/pub/ec70c62c-3bcd-4ca7-9497-66e74e65dad8
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc0MDc3NjQsImlkIjo0Mywicm9sZSI6IlBVQkxJU0hFUiIsImV4cCI6MTcwNzQ5NDE2NCwiaXNzIjoiS3VuVXpUZXN0In0.rTbU-YsOmdyRqZaSd8XOOILRVsyZS5iRyN6XX4mLmj17a_Wwr2AwyPZQqIU9fGA7TnJfsf4lQIeCSxgCtfN0Bg
+
+
+
+### Get last 5 article
+GET http://localhost:8080/article/getLast5Article/1
+
+
+### Get last 3 article
+GET http://localhost:8080/article/getLast3Article/2
+
+
+### get by not include id list
+GET http://localhost:8080/article/get8ArticleNotIncludedInGivenList/list?list=[1]
+
+
+### get by type
+GET http://localhost:8080/article/getArticleByTypeAndExceptGivenArticleId/id=f905f3e9-12a5-4d27-8082-92f49c1f4bfa?typeId=1
+
+
+### get 4 most read
+GET http://localhost:8080/article/get4MostReadArticle
+
+
+### Pagination
+GET http://localhost:8080/article/paginationRegion?region=3
+
+
+### get by categoryId
+GET http://localhost:8080/article/getLast5ArticleByCategory?categoryId=2
+
+
+### update view count
+PUT http://localhost:8080/article/increaseViewCountByArticle/ec70c62c-3bcd-4ca7-9497-66e74e65dad8
+Content-Type: application/x-www-form-urlencoded
+
+
+### get by type and regionId
+GET http://localhost:8080/article/getByTypeAndRegion?typeId=2&regionId=3
+
+
+### Article filter
+POST http://localhost:8080/article/pub/filter
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc3MzExNDAsImlkIjo0Mywicm9sZSI6IlBVQkxJU0hFUiIsImV4cCI6MTcwNzgxNzU0MCwiaXNzIjoiS3VuVXpUZXN0In0.ZFKFGjaz6Gx8KgQtcjziJhU1BZzX0HUqAAjGsdeZNuhQogURRWPZTWwBFPeLJZ4YTT9Plvy_SDYStqXfo5BLCA
+
+{
+  "regionId": 3,
+  "title": "Mahalliy businessmanlar 3",
+  "categoryId":2
+}

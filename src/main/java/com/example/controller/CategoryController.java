@@ -22,27 +22,27 @@ public class CategoryController {
     @PostMapping("/adm")
     public ResponseEntity<CategoryDTO> create(@RequestBody CategoryDTO dto,
                                               HttpServletRequest request){
-        HttpRequestUtil.getProfileId(request,ProfileRole.ADMIN);
+        HttpRequestUtil.getProfileId(request,ProfileRole.ROLE_ADMIN);
         return ResponseEntity.ok(categoryService.create(dto));
     }
 
     @PutMapping("/adm/{id}")
     public ResponseEntity<Boolean> updateAdmin(@PathVariable("id") Integer id, @RequestBody CategoryDTO dto,
                                                HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request,ProfileRole.ADMIN);
+        HttpRequestUtil.getProfileId(request,ProfileRole.ROLE_ADMIN);
         return ResponseEntity.ok(categoryService.update(id, dto));
     }
 
     @DeleteMapping("/adm/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable("id") Integer id,
                                           HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request,ProfileRole.ADMIN);
+        HttpRequestUtil.getProfileId(request,ProfileRole.ROLE_ADMIN);
         return ResponseEntity.ok(categoryService.delete(id));
     }
 
     @GetMapping("/adm")
     public ResponseEntity<List<CategoryDTO>> all(HttpServletRequest request) {
-        HttpRequestUtil.getProfileId(request,ProfileRole.ADMIN);
+        HttpRequestUtil.getProfileId(request,ProfileRole.ROLE_ADMIN);
         return ResponseEntity.ok(categoryService.getAll());
     }
 

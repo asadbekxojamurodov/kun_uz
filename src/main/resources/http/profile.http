@@ -1,15 +1,15 @@
 ### create Profile
 POST http://localhost:8080/profile/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDY5NjM4NTYsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDcwNTAyNTYsImlzcyI6Ikt1blV6VGVzdCJ9.HeZ94d4bNWe9hdVQo1sZnGiZHYW3KW9VnR_4EvCki-hyVRa6Q90RYCzRJbnOlOomSwlJ2uRSsG16Sm4QMR2JsA
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc0MDc0MjIsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDc0OTM4MjIsImlzcyI6Ikt1blV6VGVzdCJ9.r35locFc2zlqyCJSgullZiNLMHcIgU_2a_CYzsc3uyfAhL3jpYRRNFDZVTCQJlXqT-aO783JQ5MXsB76G2nX2g
 
 
 {
-"name": "Moderatorjon",
-"surname": "Moderatorov",
-"email": "mod@gmail.com",
+"name": "Publisher",
+"surname": "Publisherov",
+"email": "asadbek.khujamurodov@mail.ru",
 "password": "12345",
-"role": "MODERATOR"
+"role": "PUBLISHER"
 }
 
 <> 2024-01-23T220430.200.json

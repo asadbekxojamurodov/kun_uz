@@ -16,6 +16,3 @@ GET http://localhost:8080/attach/open/5325649638067393891_121.jpg
 GET http://localhost:8080/attach/open_general/5325649638067393891_121.jpg
 
 
-
-
-

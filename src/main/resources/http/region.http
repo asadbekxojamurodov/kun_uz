@@ -1,13 +1,13 @@
 ### create REGION
 POST http://localhost:8080/region/adm
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb2xlIjoiQURNSU4iLCJleHAiOjE3MDYyOTY4NzMsImlzcyI6Ikt1blV6VGVzdCJ9.FlFswoyZU6d3wx--mSqn-wro7pDoPpt7rPeIEtH54-dXCZ_PFnyhtLKuUaU7lCw497rKNrWZ7wEkoxLu33bYRw
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDc3NTEwOTcsImVtYWlsIjoiYWRtaW5AbWFpbC5ydSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzA3ODM3NDk3LCJpc3MiOiJLdW5VelRlc3QifQ.ux-GMlGh6Rtp3MNruhg2bb3-jRpbv8Ad5TJdFBbfk4gYL6ZGQBkUc2HQhUZ6UiAYMqfZq9_PL8twhtAVYA6F6A
 
 {
-  "order_number": 2,
-  "name_uz": "Toshkent",
-  "name_en": "Tashkent",
-  "name_ru": "Ташкент"
+  "orderNumber": 4,
+  "nameUz": "JIZZAX 3",
+  "nameEn": "JIZZAKH 3",
+  "nameRu": "Джизак 3"
 }
 
 <> 2024-01-24T130613.200.json
@@ -27,10 +27,10 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MDYyMTA0NzMsImlkIjoxLCJyb
 
 
 {
-  "order_number": 4,
-  "name_uz": "Toshkent 2",
-  "name_en": "Tashkent 2",
-  "name_ru": "Ташкент 2"
+  "orderNumber": 4,
+  "nameUz": "Toshkent 2",
+  "nameEn": "Tashkent 2",
+  "nameRu": "Ташкент 2"
 }
 
 <> 2024-01-24T131730.200.json
